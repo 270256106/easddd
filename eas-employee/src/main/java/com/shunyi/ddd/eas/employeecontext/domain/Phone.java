@@ -22,6 +22,7 @@ public class Phone {
     }
 
     public Phone(String number) {
+        validate(number);
         this.number = number;
     }
 

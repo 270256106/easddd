@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class EmployeeId {
 
     private final String id;
-    private final String format = "\"^([0-9]{4})$\"";
+    private final String format = "^([0-9]{4})$";
 
     public EmployeeId(String id) {
         validate(id);
@@ -47,7 +47,7 @@ public class EmployeeId {
         String onBoardingDate = id.substring(0, 8);
         LocalDate minDate = LocalDate.of(1989, 12, 31);
         LocalDate maxDate = LocalDate.now();
-        if (DateTimes.isValidFormat(onBoardingDate, minDate, maxDate)) {
+        if (!DateTimes.isValidFormat(onBoardingDate, minDate, maxDate)) {
             throw new InvalidEmployeeIdException("On boarding date of employee id is invalid.");
         }
     }

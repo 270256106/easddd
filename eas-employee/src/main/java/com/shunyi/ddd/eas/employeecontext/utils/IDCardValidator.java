@@ -1,7 +1,7 @@
 package com.shunyi.ddd.eas.employeecontext.utils;
 
+import com.google.common.base.Strings;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidIdCardException;
-import org.apache.logging.log4j.util.Strings;
 
 import java.time.LocalDate;
 import java.util.regex.Matcher;
@@ -55,7 +55,7 @@ public class IDCardValidator {
     }
 
     private void validateBirthday(String birthdayPart, LocalDate minDate, LocalDate maxDate) {
-        if (DateTimes.isValidFormat(birthdayPart, minDate, maxDate)) {
+        if (!DateTimes.isValidFormat(birthdayPart, minDate, maxDate)) {
             throw new InvalidIdCardException("Birthday of Id card is invalid.");
         }
     }
@@ -75,8 +75,8 @@ public class IDCardValidator {
     }
 
     private void validateNullOrEmpty() {
-        if (Strings.isNotEmpty(this.number)) {
-            throw new InvalidIdCardException("Id card number not be null or empty");
+        if (Strings.isNullOrEmpty(this.number)) {
+            throw new InvalidIdCardException("Id card number should not be null or empty");
         }
     }
 

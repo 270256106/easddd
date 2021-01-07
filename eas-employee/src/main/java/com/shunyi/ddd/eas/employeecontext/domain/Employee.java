@@ -72,7 +72,7 @@ public class Employee {
 
     public synchronized void assignIdFrom(String sequenceCode) {
         if (Strings.isNullOrEmpty(sequenceCode)) {
-            throw new InvalidEmployeeIdException("Invalid squence code.");
+            throw new InvalidEmployeeIdException("Invalid sequence code.");
         }
 
         int sequenceNumber = paseSequenceNumber(sequenceCode) + 1;

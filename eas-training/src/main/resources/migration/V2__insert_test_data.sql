@@ -1,0 +1,2 @@
+INSERT INTO mail_template(id, template, templateType)
+values ("mailc3c9-f809-4a06-8fc4-ff7d330c86ca", "Hi $nomineeName$:\n$url$\n\nHere is the basic information of training:\nTitle: $title$\nDescription: $description$\nBegin time: $beginTime$\nEnd time: $endTime$\nPlace: $place$\n\nThanks! We're excited to have you in the training.\nEAS Team", "Nomination");

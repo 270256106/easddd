@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.shunyi.trainingcontext.domain.training"/>
+        <package name="com.shunyi.trainingcontext.domain.learning"/>
+        <package name="com.shunyi.trainingcontext.domain.ticket"/>
+        <package name="com.shunyi.trainingcontext.domain.tickethistory"/>
+        <package name="com.shunyi.trainingcontext.domain.candidate"/>
+        <package name="com.shunyi.trainingcontext.domain.validdate"/>
+        <package name="com.shunyi.trainingcontext.domain.notification"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="mapper/TrainingMapper.xml"/>
+        <mapper resource="mapper/LearningMapper.xml"/>
+        <mapper resource="mapper/TicketMapper.xml"/>
+        <mapper resource="mapper/TicketHistoryMapper.xml"/>
+        <mapper resource="mapper/CandidateMapper.xml"/>
+        <mapper resource="mapper/MailTemplateMapper.xml"/>
+        <mapper resource="mapper/ValidDateMapper.xml"/>
+    </mappers>
+</configuration>

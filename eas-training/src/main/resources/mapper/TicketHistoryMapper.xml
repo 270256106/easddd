@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shunyi.trainingcontext.acl.ports.repositories.TicketHistoryRepository" >
+    <resultMap id="ticketHistoryResult" type="TicketHistory" >
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="ticketId" property="ticketId.value" jdbcType="VARCHAR" />
+        <result column="operationType" property="operationType" jdbcType="VARCHAR" />
+        <result column="operatedAt" property="operatedAt" jdbcType="TIMESTAMP" />
+        <association property="owner" javaType="TicketOwner">
+            <constructor>
+                <arg column="ownerId" jdbcType="VARCHAR" javaType="String"/>
+                <arg column="ownerType" jdbcType="VARCHAR" javaType="TicketOwnerType" />
+            </constructor>
+        </association>
+        <association property="stateTransit"  javaType="StateTransit">
+            <constructor>
+                <arg column="fromStatus" jdbcType="VARCHAR" javaType="TicketStatus" />
+                <arg column="toStatus"  jdbcType="VARCHAR" javaType="TicketStatus" />
+            </constructor>
+        </association>
+        <association property="operatorBy"  javaType="Operator">
+            <constructor>
+                <arg column="operatorId" jdbcType="VARCHAR" javaType="String" />
+                <arg column="operatorName" jdbcType="VARCHAR" javaType="String" />
+            </constructor>
+        </association>
+    </resultMap>
+
+    <select id="latest" parameterType="TicketId" resultMap="ticketHistoryResult">
+        select
+        id, ticketId, ownerId, ownerType, fromStatus, toStatus, operationType, operatorId, operatorName, operatedAt
+        from ticket_history
+        where ticketId = #{ticketId} and operatedAt = (select max(operatedAt) from ticket_history where ticketId = #{ticketId})
+    </select>
+
+    <insert id="add" parameterType="TicketHistory">
+        insert into ticket_history
+        (id, ticketId, ownerId, ownerType, fromStatus, toStatus, operationType, operatorId, operatorName, operatedAt)
+        values
+        (
+        #{id},
+        #{ticketId}, #{ticketOwner.employeeId}, #{ticketOwner.ownerType},
+        #{stateTransit.from}, #{stateTransit.to}, #{operationType},
+        #{operatedBy.operatorId}, #{operatedBy.name}, #{operatedAt}
+        )
+    </insert>
+
+    <delete id="deleteBy" parameterType="TicketId">
+        delete from ticket_history where ticketId = #{ticketId}
+    </delete>
+</mapper>

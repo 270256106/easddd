@@ -1,5 +1,6 @@
 package com.shunyi.trainingcontext.domain.training;
 
+import com.shunyi.ddd.core.stereotype.Aggregate;
 import com.shunyi.trainingcontext.domain.course.CourseId;
 
 import java.time.LocalDateTime;
@@ -9,6 +10,7 @@ import java.util.UUID;
  * @author zhang
  * @create 2021-01-11 16:24
  */
+@Aggregate
 public class Training {
     private TrainingId    id;
     private String        title;

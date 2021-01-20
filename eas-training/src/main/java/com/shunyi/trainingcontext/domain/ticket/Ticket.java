@@ -1,5 +1,6 @@
 package com.shunyi.trainingcontext.domain.ticket;
 
+import com.shunyi.ddd.core.stereotype.Aggregate;
 import com.shunyi.trainingcontext.domain.candidate.Candidate;
 import com.shunyi.trainingcontext.domain.exceptions.TicketException;
 import com.shunyi.trainingcontext.domain.tickethistory.OperationType;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
  * @author zhang
  * @create 2021-01-12 09:19
  */
+@Aggregate
 public class Ticket {
     private TicketId     id;
     private TrainingId   trainingId;

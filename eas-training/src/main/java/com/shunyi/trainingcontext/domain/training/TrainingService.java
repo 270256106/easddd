@@ -1,7 +1,9 @@
 package com.shunyi.trainingcontext.domain.training;
 
+import com.shunyi.ddd.core.stereotype.DomainService;
 import com.shunyi.trainingcontext.acl.ports.repositories.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
@@ -9,6 +11,8 @@ import java.util.Optional;
  * @author zhang
  * @create 2021-01-11 18:00
  */
+@Service
+@DomainService
 public class TrainingService {
     @Autowired
     private TrainingRepository trainingRepository;

@@ -1,5 +1,6 @@
 package com.shunyi.trainingcontext.domain.ticket;
 
+import com.shunyi.ddd.core.stereotype.DomainService;
 import com.shunyi.trainingcontext.acl.ports.repositories.CandidateRepository;
 import com.shunyi.trainingcontext.acl.ports.repositories.TicketHistoryRepository;
 import com.shunyi.trainingcontext.acl.ports.repositories.TicketRepository;
@@ -16,6 +17,7 @@ import java.util.Optional;
  * @create 2021-01-12 09:18
  */
 @Service
+@DomainService
 public class TicketService {
     @Autowired
     private TicketRepository        tickRepo;

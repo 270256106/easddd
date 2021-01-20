@@ -23,13 +23,13 @@
         (id, title, description, beginTime, endTime, place, courseId)
         values
         (
-        #{id}, #{title}, #{description},
+        #{id.value}, #{title}, #{description},
         #{beginTime}, #{endTime}, #{place},
         #{courseId}
         )
     </insert>
 
     <delete id="remove" parameterType="Training">
-        delete from training where id = #{id}
+        delete from training where id = #{id.value}
     </delete>
 </mapper>

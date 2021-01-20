@@ -8,6 +8,6 @@
     </resultMap>
 
     <delete id="remove" parameterType="Candidate">
-        delete from candidate where employeeId =#{employeeId} and trainingId =#{trainingId}
+        delete from candidate where employeeId =#{employeeId} and trainingId =#{trainingId.value}
     </delete>
 </mapper>

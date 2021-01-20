@@ -18,7 +18,7 @@
                 <arg column="toStatus"  jdbcType="VARCHAR" javaType="TicketStatus" />
             </constructor>
         </association>
-        <association property="operatorBy"  javaType="Operator">
+        <association property="operatedBy"  javaType="Operator">
             <constructor>
                 <arg column="operatorId" jdbcType="VARCHAR" javaType="String" />
                 <arg column="operatorName" jdbcType="VARCHAR" javaType="String" />
@@ -30,7 +30,7 @@
         select
         id, ticketId, ownerId, ownerType, fromStatus, toStatus, operationType, operatorId, operatorName, operatedAt
         from ticket_history
-        where ticketId = #{ticketId} and operatedAt = (select max(operatedAt) from ticket_history where ticketId = #{ticketId})
+        where ticketId = #{ticketId.value} and operatedAt = (select max(operatedAt) from ticket_history where ticketId = #{ticketId.value})
     </select>
 
     <insert id="add" parameterType="TicketHistory">
@@ -39,13 +39,13 @@
         values
         (
         #{id},
-        #{ticketId}, #{ticketOwner.employeeId}, #{ticketOwner.ownerType},
+        #{ticketId.value}, #{ticketOwner.employeeId}, #{ticketOwner.ownerType},
         #{stateTransit.from}, #{stateTransit.to}, #{operationType},
         #{operatedBy.operatorId}, #{operatedBy.name}, #{operatedAt}
         )
     </insert>
 
     <delete id="deleteBy" parameterType="TicketId">
-        delete from ticket_history where ticketId = #{ticketId}
+        delete from ticket_history where ticketId = #{ticketId.value}
     </delete>
 </mapper>

@@ -1,5 +1,6 @@
 package com.shunyi.trainingcontext.domain.notification;
 
+import com.shunyi.ddd.core.stereotype.DomainService;
 import com.shunyi.trainingcontext.acl.ports.clients.NotificationClient;
 import com.shunyi.trainingcontext.acl.ports.repositories.MailTemplateRepository;
 import com.shunyi.trainingcontext.acl.ports.repositories.TrainingRepository;
@@ -22,9 +23,10 @@ import java.util.Optional;
  * @create 2021-01-12 15:34
  */
 @Service
+@DomainService
 public class NotificationService {
     @Autowired
-    private MailTemplateRepository templateRepository;
+    private MailTemplateRepository MailTemplateRepository;
     @Autowired
     private NotificationClient     notificationClient;
     @Autowired
@@ -61,18 +63,18 @@ public class NotificationService {
 
     private Training retrieveTraining(Ticket ticket) {
         Optional<Training> optionalTraining        = trainingRepository.trainingOf(ticket.trainingId());
-        String             trainingNotFoundMessage = String.format("training bby id {%s} was not found.", ticket.trainingId());
+        String             trainingNotFoundMessage = String.format("Training by id {%s} was not found.", ticket.trainingId());
         return optionalTraining.orElseThrow(() -> new TrainingException(trainingNotFoundMessage));
     }
 
     private MailTemplate retrieveMailTemplate() {
-        Optional<MailTemplate> optionalMailTemplate        = templateRepository.templateOf(TemplateType.Nomination);
+        Optional<MailTemplate> optionalMailTemplate        = MailTemplateRepository.templateOf(TemplateType.Nomination);
         String                 mailTemplateNotFoundMessage = String.format("mail template by %s was not found.", TemplateType.Nomination);
         return optionalMailTemplate.orElseThrow(() -> new MailTemplateException(mailTemplateNotFoundMessage));
     }
 
-    public void setTemplateRepository(MailTemplateRepository templateRepository) {
-        this.templateRepository = templateRepository;
+    public void setMailTemplateRepository(MailTemplateRepository MailTemplateRepository) {
+        this.MailTemplateRepository = MailTemplateRepository;
     }
 
     public void setNotificationClient(NotificationClient notificationClient) {

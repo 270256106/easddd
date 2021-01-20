@@ -31,7 +31,7 @@ public abstract class NotificationComposer {
     }
 
     protected String renderBody() {
-        List<TemplateVariable> variables = registerVaiables();
+        List<TemplateVariable> variables = registerVariables();
         ST                     st        = new ST(template, BEGIN_VARIABLE, END_VARIABLE);
         for (TemplateVariable variable : variables) {
             st.add(variable.name(), variable.value());
@@ -39,7 +39,7 @@ public abstract class NotificationComposer {
         return st.render();
     }
 
-    protected abstract List<TemplateVariable> registerVaiables();
+    protected abstract List<TemplateVariable> registerVariables();
 
     protected abstract String renderSubject();
 

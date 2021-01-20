@@ -3,7 +3,6 @@ package com.shunyi.ddd.eas.employeecontext.domain;
 import com.google.common.base.Strings;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidEmployeeException;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidEmployeeIdException;
-import com.sun.tools.javah.Gen;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

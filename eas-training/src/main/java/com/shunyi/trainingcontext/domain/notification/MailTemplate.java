@@ -1,12 +1,15 @@
 package com.shunyi.trainingcontext.domain.notification;
 
 
+import com.shunyi.ddd.core.stereotype.Aggregate;
+
 import java.util.UUID;
 
 /**
  * @author zhang
  * @create 2021-01-08 17:59
  */
+@Aggregate
 public class MailTemplate {
     private String       id;
     private String       template;

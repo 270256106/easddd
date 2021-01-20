@@ -1,5 +1,6 @@
 package com.shunyi.trainingcontext.domain.tickethistory;
 
+import com.shunyi.ddd.core.stereotype.Aggregate;
 import com.shunyi.trainingcontext.domain.ticket.TicketId;
 import com.shunyi.trainingcontext.domain.ticket.TicketStatus;
 
@@ -10,13 +11,14 @@ import java.util.UUID;
  * @author zhang
  * @create 2021-01-12 13:48
  */
+@Aggregate
 public class TicketHistory {
     private String        id;
     private TicketId      ticketId;
     private TicketOwner   owner;
     private StateTransit  stateTransit;
     private OperationType operationType;
-    private Operator      operatorBy;
+    private Operator      operatedBy;
     private LocalDateTime operatedAt;
 
     public TicketHistory(String id,
@@ -24,14 +26,14 @@ public class TicketHistory {
                          TicketOwner owner,
                          StateTransit stateTransit,
                          OperationType operationType,
-                         Operator operatorBy,
+                         Operator operatedBy,
                          LocalDateTime operatedAt) {
         this.id = id;
         this.ticketId = ticketId;
         this.owner = owner;
         this.stateTransit = stateTransit;
         this.operationType = operationType;
-        this.operatorBy = operatorBy;
+        this.operatedBy = operatedBy;
         this.operatedAt = operatedAt;
     }
 
@@ -59,7 +61,7 @@ public class TicketHistory {
         this.owner = new TicketOwner(ownerId, ownerType);
         this.stateTransit = StateTransit.from(fromStatus).to(toStatus);
         this.operationType = operationType;
-        this.operatorBy = new Operator(operatorId, operatorName);
+        this.operatedBy = new Operator(operatorId, operatorName);
         this.operatedAt = operatedAt;
     }
 
@@ -67,11 +69,11 @@ public class TicketHistory {
         return this.ticketId;
     }
 
-    public TicketOwner owner() {
+    public TicketOwner getTicketOwner() {
         return this.owner;
     }
 
-    public StateTransit stateTransit() {
+    public StateTransit getStateTransit() {
         return this.stateTransit;
     }
 
@@ -79,8 +81,8 @@ public class TicketHistory {
         return this.operationType;
     }
 
-    public Operator operatorBy() {
-        return this.operatorBy;
+    public Operator operatedBy() {
+        return this.operatedBy;
     }
 
     public LocalDateTime operatedAt() {

@@ -1,5 +1,6 @@
-package com.shunyi.trainingcontext.domain.leaming;
+package com.shunyi.trainingcontext.domain.leaning;
 
+import com.shunyi.ddd.core.stereotype.DomainService;
 import com.shunyi.trainingcontext.acl.ports.repositories.LearningRepository;
 import com.shunyi.trainingcontext.acl.ports.repositories.TrainingRepository;
 import com.shunyi.trainingcontext.domain.training.Training;
@@ -15,13 +16,14 @@ import java.util.Optional;
  * @create 2021-01-12 14:59
  */
 @Service
+@DomainService
 public class LearningService {
     @Autowired
     private TrainingRepository trainingRepo;
     @Autowired
     private LearningRepository learningRepo;
 
-    public void setRepositoryRepo(TrainingRepository trainingRepo) {
+    public void setTrainingRepo(TrainingRepository trainingRepo) {
         this.trainingRepo = trainingRepo;
     }
 

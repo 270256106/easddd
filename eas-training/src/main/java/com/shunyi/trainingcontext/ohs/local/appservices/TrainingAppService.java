@@ -1,10 +1,11 @@
 package com.shunyi.trainingcontext.ohs.local.appservices;
 
 import com.google.common.base.Strings;
-import com.shunyi.ddd.core.application.exceptions.ApplicationDomainException;
-import com.shunyi.ddd.core.application.exceptions.ApplicationInfrastructureException;
-import com.shunyi.ddd.core.application.exceptions.ApplicationValidationException;
-import com.shunyi.ddd.core.domain.exceptions.DomainException;
+import com.shunyi.ddd.core.exceptions.ApplicationDomainException;
+import com.shunyi.ddd.core.exceptions.ApplicationInfrastructureException;
+import com.shunyi.ddd.core.exceptions.ApplicationValidationException;
+import com.shunyi.ddd.core.exceptions.DomainException;
+import com.shunyi.ddd.core.stereotype.Local;
 import com.shunyi.trainingcontext.domain.training.Training;
 import com.shunyi.trainingcontext.domain.training.TrainingId;
 import com.shunyi.trainingcontext.domain.training.TrainingService;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
  * @create 2021-01-12 17:54
  */
 @Service
+@Local
 public class TrainingAppService {
 
     @Autowired

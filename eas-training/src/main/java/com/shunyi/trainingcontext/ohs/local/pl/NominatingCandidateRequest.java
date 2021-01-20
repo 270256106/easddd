@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author zhang
  * @create 2021-01-12 17:55
  */
+// Request Message: DTO
 public class NominatingCandidateRequest implements Serializable {
     private String ticketId;
     private String trainingId;

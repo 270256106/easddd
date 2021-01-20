@@ -1,5 +1,6 @@
 package com.shunyi.trainingcontext.domain.candidate;
 
+import com.shunyi.ddd.core.stereotype.Aggregate;
 import com.shunyi.trainingcontext.domain.ticket.Nominee;
 import com.shunyi.trainingcontext.domain.tickethistory.TicketOwner;
 import com.shunyi.trainingcontext.domain.tickethistory.TicketOwnerType;
@@ -11,6 +12,7 @@ import java.util.UUID;
  * @author zhang
  * @create 2021-01-12 15:27
  */
+@Aggregate
 public class Candidate {
     private String     id;
     private String     employeeId;

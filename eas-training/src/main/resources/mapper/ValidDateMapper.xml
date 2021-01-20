@@ -20,11 +20,11 @@
         (id, trainingId, deadline, validDateType)
         values
         (
-        #{id}, #{trainingId}, #{deadline}, #{validDateType}
+        #{id}, #{trainingId.value}, #{deadline}, #{validDateType}
         )
     </insert>
 
     <delete id="remove" parameterType="ValidDate">
-        delete from valid_date where trainingId = #{trainingId} and validDateType = #{validDateType}
+        delete from valid_date where trainingId = #{trainingId.value} and validDateType = #{validDateType}
     </delete>
 </mapper>

@@ -18,7 +18,7 @@
     <update id="update" parameterType="Ticket">
         update ticket
             <set>
-                <if test="trainingId != null">trainingId=#{trainingId},</if>
+                <if test="trainingId != null">trainingId=#{trainingId.value},</if>
                 <if test="ticketStatus != null">ticketStatus=#{ticketStatus},</if>
                 <if test="nomineeId != null">nomineeId=#{nomineeId}</if>
             </set>
@@ -29,7 +29,7 @@
         (id, ticketStatus, trainingId, nomineeId)
         values
         (
-        #{id}, #{ticketStatus}, #{trainingId}, #{nomineeId}
+        #{id}, #{ticketStatus}, #{trainingId.value}, #{nomineeId}
         )
     </insert>
 

@@ -1,10 +1,10 @@
 package com.shunyi.trainingcontext.ohs.local.appservices;
 
-import com.shunyi.ddd.core.application.exceptions.ApplicationException;
-import com.shunyi.ddd.core.application.exceptions.ApplicationInfrastructureException;
-import com.shunyi.ddd.core.application.exceptions.ApplicationValidationException;
-import com.shunyi.ddd.core.domain.exceptions.DomainException;
-import com.shunyi.trainingcontext.domain.ticket.NominationService;
+import com.shunyi.ddd.core.exceptions.ApplicationException;
+import com.shunyi.ddd.core.exceptions.ApplicationInfrastructureException;
+import com.shunyi.ddd.core.exceptions.ApplicationValidationException;
+import com.shunyi.ddd.core.exceptions.DomainException;
+import com.shunyi.ddd.core.stereotype.Local;
 import com.shunyi.trainingcontext.ohs.local.pl.NominatingCandidateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +19,7 @@ import java.util.Objects;
  */
 @Service
 @EnableTransactionManagement
+@Local
 public class NominationAppService {
 
     @Autowired

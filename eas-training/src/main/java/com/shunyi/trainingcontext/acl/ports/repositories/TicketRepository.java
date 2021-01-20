@@ -1,5 +1,7 @@
 package com.shunyi.trainingcontext.acl.ports.repositories;
 
+import com.shunyi.ddd.core.stereotype.Adapter;
+import com.shunyi.ddd.core.stereotype.PortType;
 import com.shunyi.trainingcontext.domain.ticket.Ticket;
 import com.shunyi.trainingcontext.domain.ticket.TicketId;
 import com.shunyi.trainingcontext.domain.ticket.TicketService;
@@ -14,6 +16,7 @@ import java.util.Optional;
  */
 @Mapper
 @Repository
+@Adapter(PortType.Repository)
 public interface TicketRepository {
     Optional<Ticket> ticketOf(TicketId ticketId, TicketStatus ticketStatus);
 

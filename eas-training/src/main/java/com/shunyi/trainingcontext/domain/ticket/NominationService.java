@@ -1,8 +1,9 @@
 package com.shunyi.trainingcontext.domain.ticket;
 
+import com.shunyi.ddd.core.stereotype.DomainService;
 import com.shunyi.trainingcontext.domain.candidate.Candidate;
 import com.shunyi.trainingcontext.domain.exceptions.NominationException;
-import com.shunyi.trainingcontext.domain.leaming.LearningService;
+import com.shunyi.trainingcontext.domain.leaning.LearningService;
 import com.shunyi.trainingcontext.domain.notification.NotificationService;
 import com.shunyi.trainingcontext.domain.training.TrainingId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
  * @create 2021-01-12 09:19
  */
 @Service
+@DomainService
 public class NominationService {
 
     @Autowired

@@ -1,6 +1,6 @@
 package com.shunyi.trainingcontext.ohs.local.appservices;
 
-import com.shunyi.ddd.core.application.exceptions.ApplicationException;
+import com.shunyi.ddd.core.exceptions.ApplicationException;
 import com.shunyi.trainingcontext.acl.ports.repositories.TicketHistoryRepository;
 import com.shunyi.trainingcontext.acl.ports.repositories.TicketRepository;
 import com.shunyi.trainingcontext.acl.ports.repositories.TrainingRepository;

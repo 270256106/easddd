@@ -1,6 +1,7 @@
 package com.shunyi.ddd.eas.employeecontext.domain;
 
 
+import com.shunyi.ddd.eas.employeecontext.domain.employee.Phone;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidPhoneNumberException;
 import org.junit.Test;
 

@@ -1,5 +1,10 @@
 package com.shunyi.ddd.eas.employeecontext.domain;
 
+import com.shunyi.ddd.eas.employeecontext.domain.employee.Employee;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.EmployeeId;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.EmployeeIdGenerator;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.IDCard;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.Phone;
 import com.shunyi.ddd.eas.employeecontext.repository.EmployeeRepository;
 import org.junit.Test;
 

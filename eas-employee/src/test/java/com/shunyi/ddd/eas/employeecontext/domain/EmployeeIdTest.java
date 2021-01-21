@@ -1,6 +1,9 @@
 package com.shunyi.ddd.eas.employeecontext.domain;
 
-import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidEmployeeException;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.Employee;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.EmployeeId;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.IDCard;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.Phone;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidEmployeeIdException;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +15,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class EmployeeIdTest{
 
-    private static String validName;
-    private static IDCard validIdCard;
-    private static Phone validPhone;
-    private Employee employee;
+    private static String   validName;
+    private static IDCard   validIdCard;
+    private static Phone    validPhone;
+    private        Employee employee;
 
     @Before
     public void setUp() {

@@ -5,6 +5,7 @@ import com.shunyi.ddd.core.exceptions.ApplicationInfrastructureException;
 import com.shunyi.ddd.core.exceptions.ApplicationValidationException;
 import com.shunyi.ddd.core.exceptions.DomainException;
 import com.shunyi.ddd.core.stereotype.Local;
+import com.shunyi.trainingcontext.domain.ticket.NominationService;
 import com.shunyi.trainingcontext.ohs.local.pl.NominatingCandidateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

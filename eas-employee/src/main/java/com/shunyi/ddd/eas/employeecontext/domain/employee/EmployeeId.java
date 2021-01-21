@@ -1,4 +1,4 @@
-package com.shunyi.ddd.eas.employeecontext.domain;
+package com.shunyi.ddd.eas.employeecontext.domain.employee;
 
 import com.google.common.base.Strings;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidEmployeeIdException;

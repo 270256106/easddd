@@ -1,5 +1,6 @@
 package com.shunyi.ddd.eas.employeecontext.domain;
 
+import com.shunyi.ddd.eas.employeecontext.domain.employee.IDCard;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidIdCardException;
 import org.junit.Before;
 import org.junit.Test;

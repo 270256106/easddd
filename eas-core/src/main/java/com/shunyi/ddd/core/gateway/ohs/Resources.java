@@ -3,6 +3,7 @@ package com.shunyi.ddd.core.gateway.ohs;
 
 import com.shunyi.ddd.core.exceptions.ApplicationInfrastructureException;
 import com.shunyi.ddd.core.exceptions.ApplicationValidationException;
+import com.shunyi.ddd.core.exceptions.ApplicationDomainException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 

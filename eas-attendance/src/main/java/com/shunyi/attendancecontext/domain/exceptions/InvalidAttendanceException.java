@@ -1,6 +1,7 @@
 package com.shunyi.attendancecontext.domain.exceptions;
 
-import com.shunyi.ddd.core.domain.exceptions.DomainException;
+
+import com.shunyi.ddd.core.exceptions.DomainException;
 
 /**
  * @author zhang

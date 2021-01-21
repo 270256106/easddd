@@ -1,6 +1,8 @@
 package com.shunyi.trainingcontext.ohs.remote.resources;
 
 import com.shunyi.ddd.core.gateway.ohs.Resources;
+import com.shunyi.ddd.core.stereotype.Remote;
+import com.shunyi.ddd.core.stereotype.RemoteType;
 import com.shunyi.trainingcontext.ohs.local.appservices.TrainingAppService;
 import com.shunyi.trainingcontext.ohs.local.pl.TrainingResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import java.util.logging.Logger;
  */
 @RestController
 @RequestMapping("/trainings")
+@Remote(RemoteType.Resource)
 public class TrainingResource {
     private Logger logger = Logger.getLogger(TrainingResource.class.getName());
 

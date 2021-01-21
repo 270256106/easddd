@@ -1,5 +1,8 @@
 package com.shunyi.ddd.eas.employeecontext.domain;
 
+import com.shunyi.ddd.eas.employeecontext.domain.employee.Employee;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.IDCard;
+import com.shunyi.ddd.eas.employeecontext.domain.employee.Phone;
 import com.shunyi.ddd.eas.employeecontext.domain.exceptions.InvalidEmployeeException;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +16,7 @@ public class EmployeeTest{
 
     private static String validName;
     private static IDCard validIdCard;
-    private static Phone validPhone;
+    private static Phone  validPhone;
 
     @Before
     public void setUp() {

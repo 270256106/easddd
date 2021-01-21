@@ -1,6 +1,8 @@
 package com.shunyi.trainingcontext.ohs.remote.resources;
 
 import com.shunyi.ddd.core.gateway.ohs.Resources;
+import com.shunyi.ddd.core.stereotype.Remote;
+import com.shunyi.ddd.core.stereotype.RemoteType;
 import com.shunyi.trainingcontext.ohs.local.appservices.NominationAppService;
 import com.shunyi.trainingcontext.ohs.local.pl.NominatingCandidateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import java.util.logging.Logger;
  */
 @RestController
 @RequestMapping("/tickets")
+@Remote(RemoteType.Resource)
 public class TicketResource {
     private Logger logger = Logger.getLogger(TicketResource.class.getName());
 

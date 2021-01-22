@@ -11,6 +11,10 @@ import java.util.Objects;
 public class AbstractIdentity<T> implements Identity<T> {
     private  T value;
 
+    public AbstractIdentity() {
+
+    }
+
     public AbstractIdentity(T value) {
         this.setId(value);
     }
